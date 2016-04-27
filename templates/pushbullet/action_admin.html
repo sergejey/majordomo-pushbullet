@@ -1,0 +1,50 @@
+
+ [#if VIEW_MODE="search_yandex_tts" || VIEW_MODE=""#]
+
+[#if OK#]
+   <div class="alert alert-success"><#LANG_DATA_SAVED#></div>
+[#endif OK#]
+
+ 
+<!-- table zwave_devices search -->
+<div id='api_settings'>
+<form action="?" method="post" enctype="multipart/form-data" name="frmEdit" class="form-horizontal">
+<fieldset>
+<div class="form-group">
+ <label class="control-label"> API Key: (*) </label>
+ <div class="col-lg-6"><input type="text" class="form-control" name="ckey" value="[#CKEY#]" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"> Recipient device(s) ID(s): </label>
+ <div class="col-lg-6"><input type="text" class="form-control" name="device_id" value="[#DEVICE_ID#]" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"> Minimum message level: </label>
+ <div class="col-lg-6"><input type="text" class="form-control" name="level" value="[#LEVEL#]" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"> Message prefix: </label>
+ <div class="col-lg-6"><input type="text" class="form-control" name="prefix" value="[#PREFIX#]" class="input"></div>
+</div>
+
+
+<div class="form-group">
+ <label class="control-label"> <#LANG_VALUE#>: (*) </label>
+ <div class="col-lg-6">
+ <input type="radio" name="disabled" value="0"[#if DISABLED!="1"#] checked[#endif#]><#LANG_ON#>
+ <input type="radio" name="disabled" value="1"[#if DISABLED=="1"#] checked[#endif#]><#LANG_OFF#>
+ </div>
+</div>
+
+<div class="form-actions">
+<button type="submit" name="subm" value="Submit" class="btn btn-primary"><#LANG_UPDATE#></button>
+<input type="hidden" name="view_mode" value="update_settings">
+<input type="hidden" name="mode" value="update">
+</div>
+</fieldset>
+</form>
+</div>
+ [#endif VIEW_MODE#]
