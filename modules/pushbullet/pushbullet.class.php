@@ -210,7 +210,7 @@ function usual(&$out) {
                            DebMes("Sending to $push_bullet_device_id title: $title ,  data: $data");
                            $res=$p->pushNote($push_bullet_device_id, $title, $data);
                           } catch(Exception $e){
-                           registerError('pushbullet', get_class($e).', '.$e->getMessage());
+                              DebMes("Pushbullet error: ".get_class($e).', '.$e->getMessage());
                           }
             }
            }
@@ -225,7 +225,7 @@ function usual(&$out) {
                            DebMes("Sending to ".$devices[$i]->iden." title: $title ,  data: $data");
                            $res=$p->pushNote($devices[$i]->iden, $title, $data);
                           } catch(Exception $e){
-                           registerError('pushbullet', get_class($e).', '.$e->getMessage());
+                              DebMes("Pushbullet error: ".get_class($e).', '.$e->getMessage());
                           }
 
             }
